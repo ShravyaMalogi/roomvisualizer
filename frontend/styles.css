@@ -1,0 +1,222 @@
+/* -----------------------------------------------
+   Light Pastel UI with Gold Accents
+------------------------------------------------- */
+
+:root {
+  --bg: #f7f5f0;
+  --card-bg: #ffffff;
+  --accent: #c8a951; /* soft gold */
+  --accent-soft: rgba(200, 169, 81, 0.15);
+  --border-subtle: #e7e2d9;
+  --text-main: #3b3b3b;
+  --text-muted: #8d8a85;
+  --shadow-soft: 0 6px 14px rgba(0,0,0,0.08);
+  --shadow-medium: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* Shell layout */
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Typography */
+h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Inputs */
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+input[type="file"] {
+  width: 100%;
+  font-size: 13px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: #faf7f2;
+  color: var(--text-muted);
+}
+
+button,
+select {
+  font-family: inherit;
+}
+
+/* Primary Button */
+.btn-primary {
+  margin-top: 10px;
+  padding: 9px 16px;
+  font-size: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-soft);
+  background: linear-gradient(120deg, var(--accent-soft), #fdfbf4);
+  color: #6f5920;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(120deg, rgba(200, 169, 81, 0.25), #fff9e8);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+/* Tile buttons */
+.btn-tile {
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: #fffdf7;
+  color: var(--text-main);
+  font-size: 13px;
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.15s ease;
+}
+
+.btn-tile:hover {
+  background: #fff9ec;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-tile:active {
+  transform: translateY(0);
+}
+
+.tile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.section-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 12px 0 6px;
+}
+
+/* Status text */
+#status {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Select styling */
+select {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: #faf7f2;
+  color: var(--text-main);
+  font-size: 13px;
+}
+
+/* Preview area */
+.preview-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.preview-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.preview-shell {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: #fffdf7;
+  padding: 8px;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+}
+
+#preview {
+  max-width: 100%;
+  max-height: 520px;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(200, 169, 81, 0.15);
+  border: 1px solid rgba(200, 169, 81, 0.3);
+  color: #6f5920;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(200, 169, 81, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+}
